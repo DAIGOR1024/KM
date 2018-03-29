@@ -1,0 +1,25 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AddModal"
+        data-whatever="@getbootstrap">Add new content
+</button>
+
+<div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">New message</h3>
+            </div>
+            <div class="modal-body">
+                <form id='add' method="post">
+                <!--<form id='add' action="/add" method="post">-->
+                        <div class="form-group col-md-12">
+                            <textarea id="new" name="new" style="resize: vertical;width: 500px;height:200px;"></textarea>
+                        </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" id='submit' class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
