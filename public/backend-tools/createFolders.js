@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-function check(){
+function createFolders(){
     fs.mkdir('./public/output',(err)=>{
         if(err && err.code === 'EEXIST'){
             return
@@ -15,6 +15,4 @@ function check(){
 }
 
 
-module.exports = {
-    check:check
-}
+module.exports = createFolders
