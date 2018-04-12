@@ -1,7 +1,7 @@
 var fs = require('fs');
 var upload = require('../public/backend-tools/upload').single('file-to-upload');
 
-module.exports.input = function (req, res) {
+function input(req, res) {
     upload(req, res, function (err) {
         if (req.file === undefined) {
             res.status(500).send({ error: 'Missing upload File!' });
@@ -17,3 +17,7 @@ module.exports.input = function (req, res) {
         }
     });
 };
+
+module.exports = {
+	input: input
+}
