@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var route = require('./routes/index');
 app.use('/', route);
 var check = require('./public/backend-tools/check');
-check()
+app.use(check())
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
