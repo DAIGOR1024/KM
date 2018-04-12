@@ -4,8 +4,6 @@ function check(){
 	fs.mkdir('./public/output',(err)=>{
 		if(err && err.code === 'EEXIST'){
 			return 
-		}else{
-			console.log('create output')
 		}
 	})
 }
