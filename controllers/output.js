@@ -5,3 +5,4 @@ function output(req, res) {
 module.exports = {
 	output:output
 }
+
