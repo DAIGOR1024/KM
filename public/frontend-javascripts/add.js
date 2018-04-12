@@ -14,7 +14,8 @@ $(function () {
                 status('Error: ' + xhr.status);
             },
             success: function (res) {
-                $('#old').val(res);
+                $('#old').val(res.content);
+                $('#fileName').val(res.fileName);
                 $('#AddModal').modal('hide');
             }
         });
