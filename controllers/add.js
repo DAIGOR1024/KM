@@ -1,13 +1,5 @@
 var fs = require('fs');
 
-function check(){
-	fs.mkdir('./public/output',(err)=>{
-		if(err && err.code === 'EEXIST'){
-			return 
-		}
-	})
-}
-
 function add(req, res) {
 	check()
 	var fileName = './public/output/output-'+Date.now()+'.txt'
