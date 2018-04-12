@@ -1,8 +1,27 @@
 var fs = require('fs');
-module.exports.add = function (req, res) {
-    fs.writeFile('./public/output/output.txt', req.body.content.toString(), "utf8", function (err) {
-        if (err) throw err;
-        res.send(req.body.content);
-    });
 
+function check(){
+	fs.mkdir('./public/output',(err)=>{
+		if(err && err.code === 'EEXIST'){
+			return 
+		}else{
+			console.log('create output')
+		}
+	})
+}
+
+function add(req, res) {
+	check()
+	var fileName = './public/output/output-'+Date.now()+'.txt'
+    fs.writeFile(fileName, req.body.content.toString(), "utf8", (err)=> {
+        if (err){
+			console.log(err)
+		}else{
+			res.send({content:req.body.content,fileName:fileName});
+		} 
+    });
 };
+
+module.exports = {
+	add:add
+}
